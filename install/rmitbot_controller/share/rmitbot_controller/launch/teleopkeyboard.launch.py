@@ -12,8 +12,10 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     
-    use_sim_time_arg = DeclareLaunchArgument(name="use_sim_time", default_value="True",
-                                      description="Use simulated time"
+    use_sim_time_arg = DeclareLaunchArgument(
+        name="use_sim_time", 
+        default_value="True",
+        description="Use simulated time"
     )
     
     teleop_keyboard = Node(

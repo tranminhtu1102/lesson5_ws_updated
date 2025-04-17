@@ -1,7 +1,7 @@
 controller_manager:
   ros__parameters:
     update_rate: 100 # Hz
-    use_sim_time: false # set to true while using with gazebo, false for real robot
+    # use_sim_time: true # set to true while using with gazebo, false for real robot
 
     # Load the joint trajectory controller - from the library ros2_controllers
     rmitbot_controller:

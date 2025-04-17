@@ -15,9 +15,6 @@
     <!-- Include ros2_control Plugins -->
     <xacro:include filename="$(find rmitbot_description)/urdf/rmitbot_ros2_control.xacro" />
 
-
-
-
     <!-- Robot description -->
     <link name="base_footprint"/>
 
