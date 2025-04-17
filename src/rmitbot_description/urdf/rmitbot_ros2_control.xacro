@@ -2,11 +2,20 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rmitbot">
 
     <ros2_control name="RobotSystem" type="system">
-
         <!-- ros2_control Gazebo -->
-        <hardware>
-            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
-        </hardware>
+        <xacro:if value="$(arg is_sim)">
+            <hardware>
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            </hardware>
+        </xacro:if>
+
+        <!-- ros2_control Real Robot -->
+        <xacro:unless value="$(arg is_sim)">
+            <hardware>
+                <plugin>rmitbot_firmware/RmitInterface</plugin>
+                <param name="port">/dev/ttyUSB0</param>
+            </hardware>
+        </xacro:unless>
 
         <!-- ros2_control Common Interfaces -->
         <joint name="wheel_right_joint">

@@ -1,7 +1,7 @@
 controller_manager:
   ros__parameters:
     update_rate: 100 # Hz
-    use_sim_time: true
+    # use_sim_time: true # set to true while using with gazebo, false for real robot
 
     # Load the joint trajectory controller - from the library ros2_controllers
     rmitbot_controller:
@@ -40,6 +40,8 @@ rmitbot_controller:
     publish_wheel_data: true
 
     # Publish to TF directly
+    # The controller broadcast odom-->base_footprint_raw
+    # The localization broadcast odom-->base_footprint
     enable_odom_tf: true 
     odom_frame_id: odom
     # base_frame_id: base_footprint

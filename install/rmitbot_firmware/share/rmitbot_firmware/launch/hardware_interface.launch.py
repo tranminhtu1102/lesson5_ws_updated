@@ -13,9 +13,9 @@ def generate_launch_description():
             [
                 "xacro ",
                 os.path.join(
-                    get_package_share_directory("bumperbot_description"),
+                    get_package_share_directory("rmitbot_description"),
                     "urdf",
-                    "bumperbot.urdf.xacro",
+                    "rmitbot.urdf.xacro",
                 ),
                 " is_sim:=False"
             ]
@@ -36,9 +36,9 @@ def generate_launch_description():
             {"robot_description": robot_description,
              "use_sim_time": False},
             os.path.join(
-                get_package_share_directory("bumperbot_controller"),
+                get_package_share_directory("rmitbot_controller"),
                 "config",
-                "bumperbot_controllers.yaml",
+                "rmitbot_controllers.yaml",
             ),
         ],
     )
