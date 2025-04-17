@@ -197,6 +197,43 @@ rmitbot_firmware_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rmitbot_firmware_uninstall.dir/build.make CMakeFiles/rmitbot_firmware_uninstall.dir/build
 .PHONY : rmitbot_firmware_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named rmitbot_firmware
+
+# Build rule for target.
+rmitbot_firmware: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rmitbot_firmware
+.PHONY : rmitbot_firmware
+
+# fast build rule for target.
+rmitbot_firmware/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rmitbot_firmware.dir/build.make CMakeFiles/rmitbot_firmware.dir/build
+.PHONY : rmitbot_firmware/fast
+
+src/rmitbot_interface.o: src/rmitbot_interface.cpp.o
+.PHONY : src/rmitbot_interface.o
+
+# target to build an object file
+src/rmitbot_interface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rmitbot_firmware.dir/build.make CMakeFiles/rmitbot_firmware.dir/src/rmitbot_interface.cpp.o
+.PHONY : src/rmitbot_interface.cpp.o
+
+src/rmitbot_interface.i: src/rmitbot_interface.cpp.i
+.PHONY : src/rmitbot_interface.i
+
+# target to preprocess a source file
+src/rmitbot_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rmitbot_firmware.dir/build.make CMakeFiles/rmitbot_firmware.dir/src/rmitbot_interface.cpp.i
+.PHONY : src/rmitbot_interface.cpp.i
+
+src/rmitbot_interface.s: src/rmitbot_interface.cpp.s
+.PHONY : src/rmitbot_interface.s
+
+# target to generate assembly for a file
+src/rmitbot_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rmitbot_firmware.dir/build.make CMakeFiles/rmitbot_firmware.dir/src/rmitbot_interface.cpp.s
+.PHONY : src/rmitbot_interface.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +249,10 @@ help:
 	@echo "... test"
 	@echo "... rmitbot_firmware_uninstall"
 	@echo "... uninstall"
+	@echo "... rmitbot_firmware"
+	@echo "... src/rmitbot_interface.o"
+	@echo "... src/rmitbot_interface.i"
+	@echo "... src/rmitbot_interface.s"
 .PHONY : help
 
 

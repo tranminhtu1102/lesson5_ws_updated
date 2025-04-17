@@ -1,3 +1,9 @@
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/rmitbot_interface.xml
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/lib/librmitbot_firmware.so
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/include/rmitbot_firmware/rmitbot_interface.hpp
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/launch/hardware_interface.launch.py
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/environment/library_path.sh
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/environment/library_path.dsv
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/ament_index/resource_index/package_run_dependencies/rmitbot_firmware
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/ament_index/resource_index/parent_prefix_path/rmitbot_firmware
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/environment/ament_prefix_path.sh
@@ -10,6 +16,10 @@
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/local_setup.dsv
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/package.dsv
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/ament_index/resource_index/packages/rmitbot_firmware
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/rmitbot_firmware
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/cmake/ament_cmake_export_include_directories-extras.cmake
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/cmake/ament_cmake_export_libraries-extras.cmake
+/home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/cmake/ament_cmake_export_dependencies-extras.cmake
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/cmake/rmitbot_firmwareConfig.cmake
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/cmake/rmitbot_firmwareConfig-version.cmake
 /home/vudinhso/RMIT_Bot/lesson5_ws/install/rmitbot_firmware/share/rmitbot_firmware/package.xml

@@ -1,5 +1,6 @@
 /home/vudinhso/RMIT_Bot/lesson5_ws/build/rmitbot_firmware/CMakeFiles/uninstall.dir
 /home/vudinhso/RMIT_Bot/lesson5_ws/build/rmitbot_firmware/CMakeFiles/rmitbot_firmware_uninstall.dir
+/home/vudinhso/RMIT_Bot/lesson5_ws/build/rmitbot_firmware/CMakeFiles/rmitbot_firmware.dir
 /home/vudinhso/RMIT_Bot/lesson5_ws/build/rmitbot_firmware/CMakeFiles/test.dir
 /home/vudinhso/RMIT_Bot/lesson5_ws/build/rmitbot_firmware/CMakeFiles/edit_cache.dir
 /home/vudinhso/RMIT_Bot/lesson5_ws/build/rmitbot_firmware/CMakeFiles/rebuild_cache.dir

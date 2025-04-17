@@ -4,10 +4,20 @@
   <name>rmitbot_firmware</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="vudinhso@gmail.com">vudinhso</maintainer>
+  <maintainer email="xxx@gmail.com">xxx</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <!-- <buildtool_depend>ament_cmake_python</buildtool_depend> -->
+  <depend>rclcpp</depend>
+  <!-- <depend>rclpy</depend> -->
+  <depend>std_msgs</depend>
+  <depend>hardware_interface</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>pluginlib</depend>
+  <depend>libserial-dev</depend>
+
+  <exec_depend>python3-serial</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
