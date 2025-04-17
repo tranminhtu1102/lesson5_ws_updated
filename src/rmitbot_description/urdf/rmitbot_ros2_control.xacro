@@ -12,7 +12,7 @@
         <!-- ros2_control Real Robot -->
         <xacro:unless value="$(arg is_sim)">
             <hardware>
-                <plugin>rmitbot_firmware/RmitInterface</plugin>
+                <plugin>rmitbot_firmware/RmitbotInterface</plugin>
                 <param name="port">/dev/ttyUSB0</param>
             </hardware>
         </xacro:unless>

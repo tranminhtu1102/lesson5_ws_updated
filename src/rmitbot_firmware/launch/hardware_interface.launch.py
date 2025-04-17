@@ -38,7 +38,7 @@ def generate_launch_description():
             os.path.join(
                 get_package_share_directory("rmitbot_controller"),
                 "config",
-                "rmitbot_controllers.yaml",
+                "rmitbot_controller.yaml",
             ),
         ],
     )

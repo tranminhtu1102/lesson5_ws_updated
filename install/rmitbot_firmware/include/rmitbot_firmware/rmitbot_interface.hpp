@@ -1,6 +1,8 @@
+// These prevent the file from being included more than once during compilation
 #ifndef RMITBOT_INTERFACE_HPP
 #define RMITBOT_INTERFACE_HPP
 
+// Include necessary headers
 #include <rclcpp/rclcpp.hpp>
 #include <hardware_interface/system_interface.hpp>
 #include <libserial/SerialPort.h>
@@ -10,38 +12,35 @@
 #include <vector>
 #include <string>
 
-
 namespace rmitbot_firmware
 {
+  using CallbackReturn = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
 
-using CallbackReturn = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
+  class RmitbotInterface : public hardware_interface::SystemInterface
+  {
+  public:
+    RmitbotInterface();
+    virtual ~RmitbotInterface();
 
-class RmitbotInterface : public hardware_interface::SystemInterface
-{
-public:
-  RmitbotInterface();
-  virtual ~RmitbotInterface();
+    // Implementing rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface
+    CallbackReturn on_activate(const rclcpp_lifecycle::State &) override;
+    CallbackReturn on_deactivate(const rclcpp_lifecycle::State &) override;
 
-  // Implementing rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface
-  CallbackReturn on_activate(const rclcpp_lifecycle::State &) override;
-  CallbackReturn on_deactivate(const rclcpp_lifecycle::State &) override;
+    // Implementing hardware_interface::SystemInterface
+    CallbackReturn on_init(const hardware_interface::HardwareInfo &hardware_info) override;
+    std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
+    std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
+    hardware_interface::return_type read(const rclcpp::Time &, const rclcpp::Duration &) override;
+    hardware_interface::return_type write(const rclcpp::Time &, const rclcpp::Duration &) override;
 
-  // Implementing hardware_interface::SystemInterface
-  CallbackReturn on_init(const hardware_interface::HardwareInfo &hardware_info) override;
-  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
-  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
-  hardware_interface::return_type read(const rclcpp::Time &, const rclcpp::Duration &) override;
-  hardware_interface::return_type write(const rclcpp::Time &, const rclcpp::Duration &) override;
+  private:
+    LibSerial::SerialPort arduino_;
+    std::string port_;
+    std::vector<double> velocity_commands_;
+    std::vector<double> position_states_;
+    std::vector<double> velocity_states_;
+    rclcpp::Time last_run_;
+  };
+} // namespace rmitbot_firmware
 
-private:
-  LibSerial::SerialPort arduino_;
-  std::string port_;
-  std::vector<double> velocity_commands_;
-  std::vector<double> position_states_;
-  std::vector<double> velocity_states_;
-  rclcpp::Time last_run_;
-};
-}  // namespace rmitbot_firmware
-
-
-#endif  // RMITBOT_INTERFACE_HPP
+#endif // RMITBOT_INTERFACE_HPP

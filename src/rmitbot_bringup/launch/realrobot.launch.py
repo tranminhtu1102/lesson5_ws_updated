@@ -22,7 +22,7 @@ def generate_launch_description():
         ),
     )
     
-    joystick = IncludeLaunchDescription(
+    teleopkeyboard = IncludeLaunchDescription(
         os.path.join(
             get_package_share_directory("rmitbot_controller"),
             "launch",
@@ -41,6 +41,6 @@ def generate_launch_description():
     return LaunchDescription([
         hardware_interface,
         controller,
-        joystick,
+        teleopkeyboard,
         # imu_driver_node,
     ])
