@@ -1,7 +1,7 @@
 CMakeFiles/rmitbot_firmware.dir/src/rmitbot_interface.cpp.o: \
- /home/vudinhso/RMIT_Bot/lesson5_ws/src/rmitbot_firmware/src/rmitbot_interface.cpp \
+ /home/tranminhtu/RMITbot/lesson5_ws/src/rmitbot_firmware/src/rmitbot_interface.cpp \
  /usr/include/stdc-predef.h \
- /home/vudinhso/RMIT_Bot/lesson5_ws/src/rmitbot_firmware/include/rmitbot_firmware/rmitbot_interface.hpp \
+ /home/tranminhtu/RMITbot/lesson5_ws/src/rmitbot_firmware/include/rmitbot_firmware/rmitbot_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp \
  /usr/include/c++/13/csignal \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \

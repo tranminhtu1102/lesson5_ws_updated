@@ -42,9 +42,10 @@ namespace rmitbot_firmware
       return CallbackReturn::FAILURE;
     }
 
-    velocity_commands_.reserve(info_.joints.size());
-    position_states_.reserve(info_.joints.size());
-    velocity_states_.reserve(info_.joints.size());
+    // Size our buffers to match the number of joints
+    velocity_commands_.assign(info_.joints.size(), 0.0);
+    position_states_.assign(info_.joints.size(), 0.0);
+    velocity_states_.assign(info_.joints.size(), 0.0);
     last_run_ = rclcpp::Clock().now();
 
     return CallbackReturn::SUCCESS;
@@ -85,9 +86,9 @@ namespace rmitbot_firmware
     RCLCPP_INFO(rclcpp::get_logger("RmitbotInterface"), "Starting robot hardware ...");
 
     // Reset commands and states
-    velocity_commands_ = {0.0, 0.0};
-    position_states_ = {0.0, 0.0};
-    velocity_states_ = {0.0, 0.0};
+    velocity_commands_ = {0.0, 0.0, 0.0, 0.0};
+    position_states_ = {0.0, 0.0, 0.0, 0.0};
+    velocity_states_ = {0.0, 0.0, 0.0, 0.0};
 
     try
     {
@@ -163,10 +164,16 @@ namespace rmitbot_firmware
           velocities.push_back(std::stof(token)); // Store the right_vel and left_vel in the vector
           // RCLCPP_INFO(rclcpp::get_logger("RmitbotInterface"), "Parsed velocities: %.2f, %.2f", velocity_states_.at(0), velocity_states_.at(1));
         }
-        velocity_states_.at(0) = velocities.at(0); // right wheel
-        velocity_states_.at(1) = velocities.at(1); // left wheel
+
+        // Update each wheel state
+        velocity_states_.at(0) = velocities.at(0); // front right wheel
+        velocity_states_.at(1) = velocities.at(1); // front left wheel
+        velocity_states_.at(2) = velocities.at(2); // rear right wheel
+        velocity_states_.at(3) = velocities.at(3); // rear left wheel
         position_states_.at(0) += velocity_states_.at(0) * dt;
         position_states_.at(1) += velocity_states_.at(1) * dt;
+        position_states_.at(2) += velocity_states_.at(2) * dt;
+        position_states_.at(3) += velocity_states_.at(3) * dt;
       }
       last_run_ = rclcpp::Clock().now();
     }
@@ -185,8 +192,10 @@ namespace rmitbot_firmware
     message_stream << "<";
     // Add the velocity data, separated by tab
     message_stream << std::fixed << std::setprecision(2)
-                   << velocity_commands_.at(0) << "\t" // Right wheel
-                   << velocity_commands_.at(1);
+                   << velocity_commands_.at(0) << "\t" // front Right wheel
+                   << velocity_commands_.at(1) << "\t" // front left wheel
+                   << velocity_commands_.at(2) << "\t" // rear Right wheel
+                   << velocity_commands_.at(3);        // rear left wheel
     // Add ending delimiter
     message_stream << ">\n"; // Optionally include newline for easy serial monitor reading
 

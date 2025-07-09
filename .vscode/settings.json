@@ -8,5 +8,6 @@
     "files.associations": {
         "iosfwd": "cpp",
         "sstream": "cpp"
-    }
+    },
+    "ros.distro": "jazzy"
 }
